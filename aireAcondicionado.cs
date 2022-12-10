@@ -1,9 +1,9 @@
-using Internal;
+
 using System;
 
 class AireAcondicionado
 {
-    private string Marca {set; get;}
+    private string Marca {set; get;} //Modelos aceptados: SAMSUNG HAIER NEDOCA
     private int Temperatura {set; get;}
     private int VelocidadFan {set; get;}
     private string Status {set; get;}
@@ -15,6 +15,16 @@ class AireAcondicionado
         this.Temperatura = Temperatura;
         this.VelocidadFan = VelocidadFan;
         this.Status = Status;
+
+    }
+
+    //Constructor de aire acondicionado apagado
+    public AireAcondicionado()
+    {
+        this.Marca = "SAMSUNG";
+        this.Temperatura = 14;
+        this.VelocidadFan = 0;
+        this.Status = "Apagado";
     }
 
     //Funcionalidades del aire acondicionado
@@ -101,16 +111,33 @@ class Program
         miAire.setEncender("encendido");
         miAire.getEncender();
 
-        miAire.setSubirTemperatura(23);
-        miAire.getSubirTemperatura();
+        if(miAire.getEncender() == "encendido")
+        {
+            miAire.setSubirTemperatura(23);
+            miAire.getSubirTemperatura();
 
-        miAire.setSubirVelocidad(3);
-        miAire.getSubirTemperatura();
+            miAire.setSubirVelocidad(3);
+            miAire.getSubirTemperatura();
 
-        Console.WriteLine("\t\tEstado del Aire Acondicionado");
-        Console.WriteLine("\nEstado: {0}", miAire.getEncender());
-        Console.WriteLine("\nTemperatura: {0}", miAire.getSubirTemperatura());
-        Console.WriteLine("\nVelocidad del abanico: {0}",miAire.getSubirVelocidad());
+            Console.WriteLine("\t\tEstado del Aire Acondicionado");
+            Console.WriteLine("\nEstado: {0}", miAire.getEncender());
+            Console.WriteLine("\nTemperatura: {0}", miAire.getSubirTemperatura());
+            Console.WriteLine("\nVelocidad del abanico: {0}",miAire.getSubirVelocidad());
+        }
+
+       
+
+        
+
+        //Segunda instancia
+
+        AireAcondicionado apagarAire = new AireAcondicionado();
+        apagarAire.setApagar("Apagado");
+        apagarAire.getApagar();
+        Console.WriteLine("\nEl aire acondicionado esta apagado..");
+
+        
+
 
     }
 }
