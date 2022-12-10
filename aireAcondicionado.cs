@@ -82,7 +82,7 @@ class AireAcondicionado
     public void estadoDelAire()
     {
         Console.WriteLine("\nMarca: {0}", Marca);
-        Console.WriteLine("\nTemperatura: {0} grados celcius", Temperatura);
+        Console.WriteLine("\nTemperatura: {0}", Temperatura);
         Console.WriteLine("\nVelocidad del fan: {0}", VelocidadFan);
         Console.WriteLine("\nStatus: {0}", Status);
     }
@@ -97,5 +97,20 @@ class Program
     {
         AireAcondicionado miAire = new AireAcondicionado("Nedoca", 15, 3, "encendido");
         miAire.estadoDelAire();
+
+        miAire.setEncender("encendido");
+        miAire.getEncender();
+
+        miAire.setSubirTemperatura(23);
+        miAire.getSubirTemperatura();
+
+        miAire.setSubirVelocidad(3);
+        miAire.getSubirTemperatura();
+
+        Console.WriteLine("\t\tEstado del Aire Acondicionado");
+        Console.WriteLine("\nEstado: {0}", miAire.getEncender());
+        Console.WriteLine("\nTemperatura: {0}", miAire.getSubirTemperatura());
+        Console.WriteLine("\nVelocidad del abanico: {0}",miAire.getSubirVelocidad());
+
     }
 }
