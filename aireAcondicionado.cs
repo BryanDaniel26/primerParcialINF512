@@ -1,3 +1,8 @@
+/*
+    Programa creado por Bryan Mendez
+
+*/
+
 
 using System;
 
@@ -108,7 +113,7 @@ class Program
         AireAcondicionado miAire = new AireAcondicionado("Nedoca", 15, 3, "encendido");
         miAire.estadoDelAire();
 
-        miAire.setEncender("encendido");
+        miAire.setEncender("Apagado");
         miAire.getEncender();
 
         if(miAire.getEncender() == "encendido")
